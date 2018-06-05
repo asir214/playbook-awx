@@ -1,0 +1,2 @@
+- name: Remove "f" package
+  apt: name=foo state=absent
