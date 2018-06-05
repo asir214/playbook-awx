@@ -1,0 +1,12 @@
+
+---
+- hosts: all
+  tasks:
+   - name: Update the packages
+     apt: 
+        update_cache: yes
+        
+   - name: Install the package "foo"
+     apt:
+        name: cowsay
+        state: present
