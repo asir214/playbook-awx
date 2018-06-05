@@ -1,0 +1,7 @@
+---
+ - host: 
+
+- name: Install the package ""
+  apt:
+    name: 
+    state: present
