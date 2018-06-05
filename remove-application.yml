@@ -4,4 +4,6 @@
   tasks:
 
   - name: Remove "cowsay" package
-       apt: name=cowsay state=absent
+       apt: 
+         name: cowsay 
+         state: absent
