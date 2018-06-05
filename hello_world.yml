@@ -4,10 +4,6 @@
  
   tasks:
   
-  - name: Change ssh port to 12000
-    set_fact:
-      ansible_ssh_port: 12000
-    
   - name: Hello World!
     shell: echo "Hi! Tower is working."
     
