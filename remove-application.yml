@@ -1,2 +1,7 @@
-- name: Remove "f" package
-  apt: name=foo state=absent
+
+---
+- hosts: all
+  tasks:
+
+  - name: Remove "cowsay" package
+       apt: name=cowsay state=absent
