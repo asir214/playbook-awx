@@ -1,0 +1,13 @@
+---
+- name: Hello World!
+  hosts: all
+ 
+  tasks:
+  
+  - name: Change ssh port to 8888
+    set_fact:
+      ansible_ssh_port: 8888
+    
+  - name: Hello World!
+    shell: echo "Hi! Tower is working."
+    
