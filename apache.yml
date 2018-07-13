@@ -1,35 +1,35 @@
 ---
 - hosts: all
   tasks:
-- name: Instalamos apache2
-  apt: pkg=apache2 state=latest
+    - name: Instalamos apache2
+      apt: pkg=apache2 state=latest
 
-- name: Activamos mod_rewrite
-  action: command a2enmod rewrite
-  notify: Reiniciar apache2
+    - name: Activamos mod_rewrite
+      action: command a2enmod rewrite
+      notify: Reiniciar apache2
 
-- name: Activamos vhost_alias
-  action: command a2enmod vhost_alias
-  notify: Reiniciar apache2
+    - name: Activamos vhost_alias
+      action: command a2enmod vhost_alias
+      notify: Reiniciar apache2
 
-- name: Activamos headers
-  action: command a2enmod headers
-  notify: Reiniciar apache2
+    - name: Activamos headers
+      action: command a2enmod headers
+      notify: Reiniciar apache2
 
-- name: Desactivamos mod_autoindex
-  action: command a2dismod autoindex -f
-  notify: Reiniciar apache2
+    - name: Desactivamos mod_autoindex
+      action: command a2dismod autoindex -f
+      notify: Reiniciar apache2
 
-- name: Actualizamos permisos logs apache2
-  lineinfile: dest=/etc/logrotate.d/apache2 regexp="create 640 root adm" line="create 644 root adm"
-  notify: Reiniciar apache2
+    - name: Actualizamos permisos logs apache2
+      lineinfile: dest=/etc/logrotate.d/apache2 regexp="create 640 root adm" line="create 644 root adm"
+      notify: Reiniciar apache2
 
-- name: Cambiamos permisos logs actuales
-  file: path=/var/log/apache2 mode=0644 recurse=yes
+    - name: Cambiamos permisos logs actuales
+      file: path=/var/log/apache2 mode=0644 recurse=yes
 
-- name: Cambiamos permisos carpeta logs
-  file: path=/var/log/apache2 mode=0755
+    - name: Cambiamos permisos carpeta logs
+      file: path=/var/log/apache2 mode=0755
 
-- name: Copiamos configuracion apache
-  template: src=apache2.conf.j2 dest=/etc/apache2/apache2.conf
-  notify: Reiniciar apache2
+    - name: Copiamos configuracion apache
+      template: src=apache2.conf.j2 dest=/etc/apache2/apache2.conf
+      notify: Reiniciar apache2
