@@ -1,7 +1,5 @@
 ---
-- hosts: all 
+- hosts: all
   tasks:
-    - name: Install the package "links"
-      apt:
-       name: links
-       state: present
+    - name: Instalamos links
+      apt: pkg=links state=latest
