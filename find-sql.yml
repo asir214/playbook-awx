@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks:
+    - name: Encontrar archivos ".sql" en "/var/www"
+      find:
+      paths: /var/www
+      patterns: '*.sql'
