@@ -3,5 +3,5 @@
   tasks:
     - name: Encontrar archivos ".sql" en "/var/www"
       find:
-      paths: /var/www
-      patterns: '*.sql'
+        paths: /var/www
+        patterns: '*.sql'
