@@ -6,4 +6,4 @@
         paths: /var/www
         patterns: "*.sql"
         recurse: yes
-        follow: yes
+        follow: no
