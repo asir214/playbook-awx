@@ -5,5 +5,5 @@
       find:
         paths: /var/www
         patterns: "*.sql"
-        recurse: no
+        recurse: yes
         follow: yes
