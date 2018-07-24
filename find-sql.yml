@@ -7,4 +7,4 @@
         patterns: "*.sql"
         recurse: yes
         follow: yes
-        excludes: '/var/www/documentacion/*.sql'
+        excludes: '/var/www/documentacion/prueba.sql'
