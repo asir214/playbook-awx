@@ -1,0 +1,5 @@
+---
+- hosts: all
+  tasks:
+    - name: Encontrar archivos ".sql" en "/var/www"
+      command: find ./ -mount -name "*.sql"
