@@ -3,8 +3,8 @@
   tasks:
     - name: Instalar
       win_package:
-        path: C:\Users\daniel.santivanez\Desktop\OCS-NG-Windows-Agent-Setup.exe
-        creates_path: C:\Program Files (x86)\OCS Inventory Agent
+        path: C:\Program Files (x86)\OCS Inventory Agent
+        creates_service: C:\Users\daniel.santivanez\Desktop\OCS-NG-Windows-Agent-Setup.exe
         creates version: 2.1.1.3
         state: present
         
