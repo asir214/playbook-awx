@@ -1,0 +1,7 @@
+- name:  Windows Update
+  hosts: all
+  tasks:
+    - name: Install Firefox
+      win_chocolatey:
+        name: firefox
+        state: present
