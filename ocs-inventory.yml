@@ -4,6 +4,7 @@
     - name: Instalar
       win_package:
         path: C:\Users\daniel.santivanez\Desktop\OCS-NG-Windows-Agent-Setup.exe
-        creates_path: C:\Program Files (x86)\OCS-NG-Windows-Agent-Setup.exe
+        creates_path: C:\Program Files (x86)\OCS Inventory Agent
         creates version: 2.1.1.3
         state: present
+        
