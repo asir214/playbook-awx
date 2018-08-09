@@ -1,0 +1,7 @@
+- name:  Instalar "OCS-Inventory"
+  hosts: all
+  tasks:
+    - name: Instalar
+      win_package:
+        path: 'C:\Users\daniel.santivanez\Desktop\OCS-NG-Windows-Agent-Setup.exe'
+        state: present
