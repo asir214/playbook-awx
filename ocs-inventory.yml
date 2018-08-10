@@ -5,3 +5,4 @@
       win_copy:
         src: /var/programas/OCS-NG-Windows-Agent-Setup.exe
         dest: C:\
+        remote_src: yes
