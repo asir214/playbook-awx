@@ -3,12 +3,12 @@
   tasks:   
     - name: copiar archivo .exe
       win_copy:
-        src: /var/lib/awx/instalacion
+        src: /var/lib/awx/instalacion/programas_windows
         dest: C:\
         
     - name: instalar archivo .exe
       win_psexec:   
         command: /i /IACCEPTEULA
-        executable: C:\instalacion\ConnectWiseControl.ClientSetup.exe
+        executable: C:\instalacion\DokanSetup.exe
         interactive: yes
         nobanner: no
