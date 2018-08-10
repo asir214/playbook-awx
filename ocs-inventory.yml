@@ -9,6 +9,6 @@
     - name: instalar archivo .exe
       win_psexec:   
         command: /i /IACCEPTEULA
-        executable: C:\instalacion\OCS-NG-Windows-Agent-Setup.exe
+        executable: C:\instalacion\ConnectWiseControl.ClientSetup.exe
         interactive: yes
         nobanner: no
