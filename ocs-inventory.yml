@@ -3,6 +3,6 @@
   tasks:
     - name: Copiar archivo.exe
       win_copy:
-        src: /var/programas/OCS-NG-Windows-Agent-Setup.exe
+        src: /srv/OCS-NG-Windows-Agent-Setup.exe
         dest: C:\
         remote_src: yes
