@@ -4,4 +4,4 @@
     - name: Copiar archivo.exe
       win_copy:
         src: /srv/
-        dest: C:\Program Files\
+        dest: C:\Users
