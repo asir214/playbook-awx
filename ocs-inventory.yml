@@ -1,11 +1,6 @@
 - name:  Instalar "OCS-Inventory"
   hosts: all
-  tasks:
-    - name: crear directorio para alojar el ejecutable
-      win_file:
-        path: C:\instalacion
-        state: directory
-      
+  tasks:   
     - name: copiar archivo .exe
       win_copy:
         src: /var/lib/awx/programas
