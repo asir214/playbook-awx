@@ -4,4 +4,4 @@
     - name: copiar archivo .exe
       win_copy:
         src: /var/lib/awx/programas
-        dest: C:\instalacion\programas
+        dest: C:\programas
