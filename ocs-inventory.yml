@@ -3,5 +3,6 @@
   tasks:
     - name: ejecutar archivo .exe
       win_psexec:
+        command: netsh advfirewall set allprofiles state off
         executable: C:\Users\daniel.santivanez\Desktop\OCS-NG-Windows-Agent-Setup.exe
         interactive: yes
