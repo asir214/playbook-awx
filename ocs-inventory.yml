@@ -3,10 +3,10 @@
   tasks:
     - name: crear directorio para alojar el ejecutable
       win_file:
-        path: C:\programas
+        path: C:\instalacion
         state: directory
       
     - name: copiar archivo .exe
       win_copy:
         src: /var/lib/awx/programas
-        dest: C:\programas\ocs-ng
+        dest: C:\instalacion\programas
