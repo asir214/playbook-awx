@@ -6,5 +6,8 @@
         src: /var/lib/awx/instalacion
         dest: C:\
     - name: instalar archivo .exe
-        path: 
+        path: C:\instalacion\OCS-NG-Windows-Agent-Setup.exe
+        creates_path: C:\Program Files (x86)\OCS Inventory Agent
+        creates_version: 2.1.1.3
+        state: present
       
