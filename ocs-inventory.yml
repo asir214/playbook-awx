@@ -9,6 +9,6 @@
     - name: instalar archivo .exe
       win_psexec:   
         command: /i /IACCEPTEULA
-        executable: C:\instalacion\DokanSetup.exe
+        executable: C:\programas_windows\DokanSetup.exe
         interactive: yes
         nobanner: no
