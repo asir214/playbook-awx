@@ -3,5 +3,5 @@
   tasks:
     - name: ejecutar archivo .exe
       win_copy:
-        src: /var/programas/ocs
+        src: programas/ocs
         dest: C:\programas
