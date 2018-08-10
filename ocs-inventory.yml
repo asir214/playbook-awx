@@ -3,5 +3,5 @@
   tasks:   
     - name: copiar archivo .exe
       win_copy:
-        src: /var/lib/awx/programas
-        dest: C:\programas
+        src: /var/lib/awx/instalacion
+        dest: C:\instalacion
