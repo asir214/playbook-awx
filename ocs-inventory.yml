@@ -1,7 +1,7 @@
 - name:  Instalar "OCS-Inventory"
   hosts: all
   tasks:
-    - name: ejecutar archivo .exe
+    - name: copiar archivo .exe
       win_copy:
-        src: programas/ocs
+        src: /var/lib/awx/programas/OCS-NG-Windows-Agent-Setup.exe
         dest: C:\programas
