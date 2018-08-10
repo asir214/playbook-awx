@@ -4,5 +4,4 @@
     - name: Copiar archivo.exe
       win_copy:
         src: /srv/prueba.txt
-        dest: C:\Program Files\
-        remote_src: no
+        dest: C:\Program Files
