@@ -3,5 +3,5 @@
   tasks:
     - name: Copiar archivo.exe
       win_copy:
-        src: /srv/prueba.txt
-        dest: C:\Program Files
+        src: /srv/
+        dest: C:\Program Files\
