@@ -3,5 +3,5 @@
   tasks:
     - name: copiar archivo .exe
       win_copy:
-        src: /var/lib/awx/programas/OCS-NG-Windows-Agent-Setup.exe
+        src: /var/lib/awx/programas
         dest: C:\programas
