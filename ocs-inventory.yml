@@ -7,9 +7,6 @@
         dest: C:\
         
     - name: instalar archivo .exe
-      win_package:   
-        path: C:\instalacion\OCS-NG-Windows-Agent-Setup.exe
-        creates_path: C:\Program Files (x86)\OCS Inventory Agent
-        creates_version: 2.1.1.3
-        arguments: '/q /norestart'
-        state: present
+      win_psexec:   
+        command: C:\instalacion\OCS-NG-Windows-Agent-Setup.exe /i /IACCEPTEULA
+        interactive: yes
