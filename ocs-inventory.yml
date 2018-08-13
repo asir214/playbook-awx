@@ -9,6 +9,9 @@
         creates_version: 2.1.1.3
         state: present
         arguments:
-        - /install
-        - /passive
-        - /norestart 
+        - /Next>
+        - /I Agree
+        - /http://ocs.netkia.es/ocsinventory /Next>
+        - /Next>
+        - /Never ask for TAG /Next>
+        - /Install
