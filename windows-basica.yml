@@ -7,7 +7,7 @@
         path: C:\AWX
         state: directory
 
-    - name: copiar archivo .exe
+    - name: copiar archivos .exe de servidor a equipo
       win_copy:
         src: /var/lib/awx/instalacion/programas_windows/instalacion_basica
         dest: C:\AWX
@@ -35,6 +35,16 @@
         state: present
     
     - name: Install Firefox
+      win_chocolatey:
+        name: firefoxesr
+        state: present
+
+    - name: Install Chrome
+      win_chocolatey:
+        name: googlechrome
+        state: present
+
+    - name: Install Thunderbird
       win_chocolatey:
         name: thunderbird
         state: present
