@@ -12,3 +12,4 @@
         - /S
         - /SERVER=http://ocs.netkia.es/ocsinventory
         - /NET
+        - /NOW
