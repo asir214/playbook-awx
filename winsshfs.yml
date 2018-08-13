@@ -1,0 +1,7 @@
+- name:  Instalar "WinSshFs"
+  hosts: all
+  tasks:   
+    - name: copiar archivo .exe
+      win_copy:
+        src: /var/lib/awx/instalacion/programas_windows/WinSshFs
+        dest: C:\AWX
