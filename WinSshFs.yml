@@ -10,19 +10,6 @@
       win_package:
         user_name: PITMA\daniel.santivanez
         user_password: ReitterVonDieEinsamkeit18
-        path: C:\WinSshFs\vcredist_x86.exe
-        creates_path: C:\Program Files (x86)\vcredist_x86.exe
-        arguments:
-        - /S
-        - /install
-        - /passive
-        - /norestart 
-        state: present
-        
-    - name: instalar archivo .exe
-      win_package:
-        user_name: PITMA\daniel.santivanez
-        user_password: ReitterVonDieEinsamkeit18
         path: C:\WinSshFs\DokanSetup.exe
         creates_path: C:\Program Files (x86)\DokanSetup.exe
         arguments:
