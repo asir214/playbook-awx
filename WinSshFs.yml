@@ -12,7 +12,8 @@
         user_password: ReitterVonDieEinsamkeit18
         path: C:\WinSshFs\vcredist_x86.exe
         creates_path: C:\Program Files (x86)\vcredist_x86.exe
-        arguments: '/q /norestart'
+        arguments:
+        - /S
         state: present
         
     - name: instalar archivo .exe
@@ -21,7 +22,8 @@
         user_password: ReitterVonDieEinsamkeit18
         path: C:\WinSshFs\DokanSetup.exe
         creates_path: C:\Program Files (x86)\DokanSetup.exe
-        arguments: '/q /norestart'
+        arguments:
+        - /S
         state: present
 
     - name: instalar archivo .exe
@@ -38,5 +40,6 @@
         user_password: ReitterVonDieEinsamkeit18
         path: C:\WinSshFs\DokanSetup_redist.exe
         creates_path: C:\Program Files (x86)\DokanSetup_redist.exe
-        arguments: '/q /norestart'
+        arguments:
+        - /S
         state: present
