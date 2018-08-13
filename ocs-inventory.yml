@@ -1,7 +1,11 @@
 - name:  Instalar "OCS-Inventory"
   hosts: all
   tasks:   
-  
+    - name: copiar archivo .exe
+      win_copy:
+        src: /var/lib/awx/instalacion/programas_windows
+        dest: C:\
+        
     - name: Instalar
       win_package:
         user_name: PITMA\daniel.santivanez
@@ -16,4 +20,3 @@
         - /NET
         - /NOW
         - /restart
-
