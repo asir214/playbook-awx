@@ -10,7 +10,7 @@
     - name: copiar archivo .exe
       win_copy:
         src: /var/lib/awx/instalacion/programas_windows/instalacion_basica
-        dest: C:\AWX\instalacion_basica
+        dest: C:\AWX
  
     - name: instalar archivo .exe
       win_package:
