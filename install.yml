@@ -1,5 +1,0 @@
----
-- hosts: all
-  tasks:
-    - name: Instalamos links
-      apt: pkg=links state=latest
