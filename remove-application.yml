@@ -1,7 +1,0 @@
-
----
-- hosts: all
-  tasks:
-
-  - name: Remove "cowsay" package
-    apt: name=links state=absent
