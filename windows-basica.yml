@@ -12,7 +12,7 @@
         src: /var/lib/awx/instalacion/programas_windows/instalacion_basica
         dest: C:\AWX
  
-    - name: instalar archivo .exe
+    - name: instalar archivo OCS-inventory.exe
       win_package:
         path: C:\AWX\instalacion_basica\OCS-NG-Windows-Agent-Setup.exe
         creates_path: C:\Program Files (x86)\OCS-NG-Windows-Agent-Setup.exe
@@ -24,7 +24,7 @@
         - /norestart
         state: present
 
-    - name: instalar archivo .exe
+    - name: instalar archivo CCleaner.exe
       win_package:
         path: C:\AWX\instalacion_basica\ccsetup542.exe
         creates_path: C:\Program Files (x86)\ccsetup542.exe
