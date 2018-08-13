@@ -1,2 +1,5 @@
-- name: get whoami information
-  win_whoami:
+- name:  Usuario
+  hosts: all
+  tasks:
+    - name: get whoami information
+      win_whoami:
