@@ -51,7 +51,7 @@
     - name: copiar archivo .exe
       win_copy:
         src: C:\AWX\instalacion_basica\Netkia_Desarrollo.p12
-        dest: C:\Certificados
+        dest: C:\Users\%UserProfile%\Certificados
         remote_src: yes   
 
     - name: Reiniciar equipo
