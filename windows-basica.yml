@@ -33,6 +33,11 @@
         - /norestart
         - /REGISTRY
         state: present
+     
+    - name: Install Firefox
+      win_chocolatey:
+        name: firefox
+        state: present
 
 #    - name: instalar archivo .exe
 #      win_package:
