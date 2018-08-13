@@ -11,7 +11,9 @@
         user_name: PITMA\daniel.santivanez
         user_password: ReitterVonDieEinsamkeit18
         path: C:\WinSshFs\vcredist_x86.exe
+        creates_path: C:\Program Files (x86)\vcredist_x86.exe
         arguments:
+        - /Yes
         - /S
         state: present
         
