@@ -1,8 +1,10 @@
 - name:  Instalar "OCS-Inventory"
   hosts: all
-  tasks:     
+  tasks:   
+  
     - name: instalar archivo .exe
-      win_msi:   
-        path: C:\programas_windows\Dokan_x64.msi
+      win_package:   
+        path: C:\programas_windows\DokanSetup_redist.exe
+        creates_path: C:\Program Files\DokanSetup_redist.exe
         arguments: '/q /norestart'
         state: present
