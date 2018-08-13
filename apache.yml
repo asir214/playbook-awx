@@ -1,5 +1,0 @@
----
-- hosts: all
-  tasks:
-    - name: Instalamos apache2
-      apt: pkg=apache2 state=latest
