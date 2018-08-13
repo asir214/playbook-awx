@@ -19,4 +19,4 @@
         - /SERVER=http://ocs.netkia.es/ocsinventory
         - /NET
         - /NOW
-        - /restart
+        - /reboot
