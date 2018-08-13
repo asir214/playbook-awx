@@ -10,7 +10,6 @@
       win_package:   
         path: C:\programas_windows\DokanSetup_redist.exe
         creates_path: C:\Program Files (x86)\DokanSetup_redist.exe
-        creates_version: 2.1.1.3
         arguments: '/q /norestart'
         state: present
            
@@ -18,7 +17,6 @@
       win_package:   
         path: C:\programas_windows\Dokan_x64.msi
         creates_path: C:\Program Files (x86)\Dokan_x64.msi
-        creates_version: 2.1.1.3
         arguments: '/q /norestart'
         state: present
         
@@ -26,6 +24,5 @@
       win_package:   
         path: C:\programas_windows\WinSshFS.exe
         creates_path: C:\Program Files (x86)\WinSshFS.exe
-        creates_version: 2.1.1.3
         arguments: '/q /norestart'
         state: present
