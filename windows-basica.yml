@@ -45,13 +45,13 @@
 
     - name: Crear directorio para alojar el certificado
       win_file:
-        path: C:\Users\%UserProfile%\Certificados
+        path: C:\Certificados
         state: directory
 
     - name: copiar archivo .exe
       win_copy:
         src: C:\AWX\instalacion_basica\Netkia_Desarrollo.p12
-        dest: C:\Users\%UserProfile%\Certificados
+        dest: C:\Certificados
         remote_src: yes   
 
     - name: Reiniciar equipo
