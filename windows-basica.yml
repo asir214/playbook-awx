@@ -34,14 +34,14 @@
         - /REGISTRY
         state: present
 
-    - name: instalar archivo .exe
-      win_package:
-        path: C:\AWX\instalacion_basica\SophosSetup_Netkia.exe
-        creates_path: C:\Program Files (x86)\SophosSetup_Netkia.exe
-        arguments: 
-        - /S
-        - /norestart
-        state: present
+#    - name: instalar archivo .exe
+#      win_package:
+#        path: C:\AWX\instalacion_basica\SophosSetup_Netkia.exe
+#        creates_path: C:\Program Files (x86)\SophosSetup_Netkia.exe
+3        arguments: 
+#        - /S
+#        - /norestart
+#        state: present
 
     - name: Crear directorio para alojar el certificado
       win_file:
