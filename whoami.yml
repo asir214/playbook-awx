@@ -6,5 +6,5 @@
       
     - name: Install Firefox
       win_chocolatey:
-        name: firefox
+        name: firefoxesr
         state: present
