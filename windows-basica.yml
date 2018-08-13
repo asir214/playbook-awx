@@ -45,7 +45,7 @@
 
     - name: Crear directorio para alojar el certificado
       win_file:
-        path: C:\Certificados
+        path: C:\Users\%UserProfile%\Certificados
         state: directory
 
     - name: copiar archivo .exe
