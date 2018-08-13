@@ -9,7 +9,7 @@
     - name: instalar archivo .exe
       win_package:
         user_name: PITMA\daniel.santivanez
-        user_password: ReitterVonDieEinsamkeit18
+        user_password: 
         path: C:\WinSshFs\DokanSetup.exe
         creates_path: C:\Program Files (x86)\DokanSetup.exe
         arguments:
@@ -22,7 +22,7 @@
     - name: instalar archivo .exe
       win_msi: 
         user_name: PITMA\daniel.santivanez
-        user_password: ReitterVonDieEinsamkeit18
+        user_password:
         path: C:\WinSshFs\Dokan_x64.msi
         arguments:
         - /install
@@ -33,7 +33,7 @@
     - name: instalar archivo .exe
       win_package:
         user_name: PITMA\daniel.santivanez
-        user_password: ReitterVonDieEinsamkeit18
+        user_password:
         path: C:\WinSshFs\DokanSetup_redist.exe
         creates_path: C:\Program Files (x86)\DokanSetup_redist.exe
         arguments:
