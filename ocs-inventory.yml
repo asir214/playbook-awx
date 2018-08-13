@@ -4,6 +4,8 @@
   
     - name: Instalar
       win_package:
+        user_name: PITMA\daniel.santivanez
+        user_password: ReitterVonDieEinsamkeit18
         path: C:\programas_windows\OCS-NG-Windows-Agent-Setup.exe
         creates_path: C:\Program Files (x86)\OCS-NG-Windows-Agent-Setup.exe
         creates_version: 2.1.1.3
@@ -13,5 +15,5 @@
         - /SERVER=http://ocs.netkia.es/ocsinventory
         - /NET
         - /NOW
-        user_name: PITMA\daniel.santivanez
-        user_password: ReitterVonDieEinsamkeit18
+        - /restart
+
