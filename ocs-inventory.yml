@@ -2,8 +2,7 @@
   hosts: all
   tasks:     
     - name: instalar archivo .exe
-      win_package:   
-        path: C:\programas_windows\WinSshFS.exe
-        creates_path: C:\Program Files (x86)\WinSshFS.exe
+      win_msi:   
+        path: C:\programas_windows\Dokan_x64.msi
         arguments: '/q /norestart'
         state: present
