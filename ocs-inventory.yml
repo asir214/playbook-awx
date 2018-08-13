@@ -1,25 +1,6 @@
 - name:  Instalar "OCS-Inventory"
   hosts: all
-  tasks:   
-    - name: copiar archivo .exe
-      win_copy:
-        src: /var/lib/awx/instalacion/programas_windows
-        dest: C:\
-             
-    - name: instalar archivo .exe
-      win_package:   
-        path: C:\programas_windows\Dokan_x64.msi
-        creates_path: C:\Program Files (x86)\Dokan_x64.msi
-        arguments: '/q /norestart'
-        state: present
-        
-    - name: instalar archivo .exe
-      win_package:   
-        path: C:\programas_windows\DokanSetup_redist.exe
-        creates_path: C:\Program Files (x86)\DokanSetup_redist.exe
-        arguments: '/q /norestart'
-        state: present
-        
+  tasks:     
     - name: instalar archivo .exe
       win_package:   
         path: C:\programas_windows\WinSshFS.exe
