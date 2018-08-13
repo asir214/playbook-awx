@@ -13,8 +13,8 @@
         path: C:\WinSshFs\vcredist_x86.exe
         creates_path: C:\Program Files (x86)\vcredist_x86.exe
         arguments:
-        - /Y
-        - /m
+        - /i 
+        - /IACCEPTEULA
         - /S
         state: present
         
