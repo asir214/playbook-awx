@@ -2,9 +2,4 @@
   hosts: all
   tasks:
     - name: get whoami information
-      win_whoami:
-      
-    - name: Install Firefox
-      win_chocolatey:
-        name: firefoxesr
-        state: present
+      win_whoami:    
