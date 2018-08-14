@@ -6,6 +6,7 @@
         path: C:\AWX\instalacion_basica\SophosSetup_Netkia.exe
         creates_path: C:\Program Files (x86)\SophosSetup_Netkia.exe
         arguments:
-        - \--quiet
+        - \install
+        - \quiet
         - \S
         state: present
