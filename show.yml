@@ -2,4 +2,7 @@
 - hosts: all
   tasks:
     - name: Encontrar archivos version del servidor
-      command: cat /etc/issue.net | grep Debian GNU/Linux
+      command: cat /etc/issue.net
+    
+    - name: Ver versión de proftpd
+      command: proftpd -V
