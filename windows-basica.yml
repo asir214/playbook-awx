@@ -62,4 +62,3 @@
 
     - name: Reiniciar equipo
       win_reboot:
-        reboot_timeout: 420
