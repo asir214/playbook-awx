@@ -2,4 +2,4 @@
 - hosts: all
   tasks:
     - name: Encontrar archivos version del servidor
-      command: cat /etc/issu.net
+      command: cat /etc/issue.net
