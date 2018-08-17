@@ -3,9 +3,16 @@
   tasks:
 
     - name: leer contenido
-      debug: var=item
-      with_file:
-      - "/etc/issue.net"
+      command: cat /etc/issue.net
+      register: ansible
 
-    - name: Ver versión de proftpd
-      command: proftpd -V
+    - debug:
+      with_items:
+        - "{{ansible.stdout_lines}}"
+
+    - shell: proftpd -V | grep Version
+      register: pro
+
+    - debug:
+      with_items:
+        - "{{pro.stdout_lines}}"
