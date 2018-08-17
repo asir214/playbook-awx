@@ -1,8 +1,11 @@
 ---
 - hosts: all
   tasks:
-    - name: Encontrar archivos version del servidor
-      command: cat /etc/issue.net
-    
+
+    - name: leer contenido
+      debug: var=item
+      with_file:
+      - "/etc/issue.net"
+
     - name: Ver versión de proftpd
       command: proftpd -V
