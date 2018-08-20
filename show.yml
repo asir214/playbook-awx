@@ -2,7 +2,7 @@
 - hosts: all
   tasks:
 
-    - name: leer contenido
+    - name: Leer nombre del host
       command: cat /etc/hostname
       register: ansible
 
@@ -10,9 +10,7 @@
       with_items:
         - "{{ansible.stdout_lines}}"
 
-    - lineinfile: create=yes regexp="NONEXISTENTLINE" dest=/root/debian.txt line="{{ansible.stdout_lines}}" state=present
-
-    - name: leer contenido
+    - name: Leer versión del host
       command: cat /etc/issue.net
       register: awx
 
@@ -20,16 +18,15 @@
       with_items:
         - "{{awx.stdout_lines}}"
 
-    - lineinfile: create=yes regexp="NONEXISTENTLINE" dest=/root/debian.txt line="{{awx.stdout_lines}}" state=present
-
     - shell: proftpd -V | grep Version
       register: pro
+      ignore_errors: yes
 
     - debug:
       with_items:
         - "{{pro.stdout_lines}}"
 
-    - lineinfile: create=yes regexp="NONEXISTENTLINE" dest=/root/debian.txt line="{{pro.stdout_lines}}" state=present
+    - blockinfile: create=yes dest=/root/debian.txt  block="{{awx.stdout_lines}},{{ansible.stdout_lines}},{{pro.stdout_lines}}"  state=present marker=""
 
     - shell: cat /root/debian.txt
       register: debian
@@ -41,15 +38,4 @@
   become: yes
   tasks:
 
-    - name: documento
-      command: find /var/local/hosts/ -type f -name debian.txt -exec cat {} \;
-      register: informe
-
-    - debug:
-      with_items:
-        - "{{informe.stdout_lines}}"
-
-    - name: Guardar informe
-      copy:
-        content: "{{informe.stdout_lines}}"
-        dest: /root/informe.csv
+    - script: /var/local/script.sh
