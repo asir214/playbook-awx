@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+
+    - file:
+        path: /root/debian.txt
+        state: absent
+
+    - file:
+        path: /root/debian.csv
+        state: absent
