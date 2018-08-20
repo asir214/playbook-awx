@@ -3,16 +3,45 @@
   tasks:
 
     - name: leer contenido
-      command: cat /etc/issue.net
+      command: cat /etc/hostname
       register: ansible
 
     - debug:
       with_items:
         - "{{ansible.stdout_lines}}"
 
-    - shell: proftpd -V | grep Version
-      register: pro
+    - lineinfile: create=yes regexp="NONEXISTENTLINE" dest=/root/debian.txt line="{{ansible.stdout_lines}}" state=present
+
+    - name: leer contenido
+      command: cat /etc/issue.net
+      register: awx
 
     - debug:
       with_items:
-        - "{{pro.stdout_lines}}"
+        - "{{awx.stdout_lines}}"
+
+    - lineinfile: create=yes regexp="NONEXISTENTLINE" dest=/root/debian.txt line="{{awx.stdout_lines}}" state=present
+
+
+    - shell: cat /root/debian.txt
+      register: debian
+
+    - fetch: src=/root/debian.txt dest=/var/local/hosts/
+
+- hosts: 127.0.0.1
+  connection: local
+  become: yes
+  tasks:
+
+    - name: documento
+      command: find /var/local/hosts/ -type f -name debian.txt -exec cat {} \;
+      register: informe
+
+    - debug:
+      with_items:
+        - "{{informe.stdout_lines}}"
+
+    - name: Guardar informe
+      copy:
+        content: "{{informe.stdout_lines}}"
+        dest: /var/local/hosts/informe/informe.csv
