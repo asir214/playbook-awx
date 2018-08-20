@@ -22,6 +22,14 @@
 
     - lineinfile: create=yes regexp="NONEXISTENTLINE" dest=/root/debian.txt line="{{awx.stdout_lines}}" state=present
 
+    - shell: proftpd -V | grep Version
+      register: pro
+
+    - debug:
+      with_items:
+        - "{{pro.stdout_lines}}"
+
+    - lineinfile: create=yes regexp="NONEXISTENTLINE" dest=/root/debian.txt line="{{pro.stdout_lines}}" state=present
 
     - shell: cat /root/debian.txt
       register: debian
