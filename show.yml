@@ -44,4 +44,4 @@
     - name: Guardar informe
       copy:
         content: "{{informe.stdout_lines}}"
-        dest: /var/local/hosts/informe/informe.csv
+        dest: /root/informe.csv
