@@ -10,6 +10,13 @@
       with_items:
         - "{{ansible.stdout_lines}}"
 
+    - shell: ifconfig | grep 192.168.55. | awk '{print $2}'
+      register: ip
+
+    - debug:
+      with_items:
+        - "{{ip.stdout_lines}}"
+
     - name: Leer versión del host
       command: cat /etc/issue.net
       register: awx
@@ -26,7 +33,7 @@
       with_items:
         - "{{pro.stdout_lines}}"
 
-    - blockinfile: create=yes dest=/root/debian.txt  block="{{awx.stdout_lines}},{{ansible.stdout_lines}},{{pro.stdout_lines}}"  state=present marker=""
+    - blockinfile: create=yes dest=/root/debian.txt  block="{{ip.stdout_lines}},{{awx.stdout_lines}},{{ansible.stdout_lines}},{{pro.stdout_lines}}"  state=present marker=""
 
     - shell: cat /root/debian.txt
       register: debian
