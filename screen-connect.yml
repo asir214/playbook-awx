@@ -19,4 +19,4 @@
       arguments: 
         - /S
         - /norestart
-        - /norestart
+      state: present
