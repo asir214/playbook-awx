@@ -47,4 +47,9 @@
 
     - script: /var/local/script.sh
     
+- hosts: 127.0.0.1
+  connection: local
+  become: yes
+  tasks:
+
     - script: /var/local/script2.sh
