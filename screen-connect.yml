@@ -14,7 +14,7 @@
         
     - name: instalar archivo .exe
       win_package:
-      path: C:\AWX\ConnectWiseControl.ClientSetup.exe
+      path: C:\AWX\ScreenConnect/ConnectWiseControl.ClientSetup.exe
       creates_path: C:\Program Files (x86)\ConnectWiseControl.ClientSetup.exe
       arguments: 
         - /S
