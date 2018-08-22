@@ -17,7 +17,7 @@
       with_items:
         - "{{ip.stdout_lines}}"
 
-    - name: Leer versión del host
+    - name: Leer versiÃ³n del host
       command: cat /etc/issue.net
       register: awx
 
@@ -46,3 +46,10 @@
   tasks:
 
     - script: /var/local/script.sh
+
+- hosts: 127.0.0.1
+  connection: local
+  become: yes
+  tasks:
+
+    - script: /var/local/script2.sh
