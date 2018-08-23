@@ -13,7 +13,19 @@
         dest: C:\AWX
         
     - name: instalación de ScreenConnect.exe
-      win_shell: C:\AWX\ScreenConnect\ConnectWiseControl.ClientSetup.exe --quiet
+      win_shell: C:\AWX\instalacion_basica\ConnectWiseControl.ClientSetup.exe --quiet
+    
+    - name: instalar archivo OCS-inventory.exe
+      win_package:
+        path: C:\AWX\instalacion_basica\OCS-NG-Windows-Agent-Setup.exe
+        creates_path: C:\Program Files (x86)\OCS-NG-Windows-Agent-Setup.exe
+        creates_version: 2.1.1.3
+        arguments: 
+        - /S
+        - /SERVER=http://ocs.netkia.es/ocsinventory
+        - /TAG=NET
+        - /norestart
+        state: present
     
     - name: instalar archivo CCleaner.exe
       win_package:
