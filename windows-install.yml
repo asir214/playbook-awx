@@ -60,7 +60,4 @@
       win_copy:
         src: C:\AWX\instalacion_basica\Netkia_Desarrollo.p12
         dest: C:\Certificados\Netkia_Desarrollo.p12
-        remote_src: yes   
-
-    - name: Reiniciar equipo
-      win_reboot:
+        remote_src: yes
