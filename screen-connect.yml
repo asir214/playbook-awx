@@ -19,5 +19,4 @@
         creates_version: 6.5.16479.6613
         arguments: 
           - /S
-          - /norestart
         state: present
