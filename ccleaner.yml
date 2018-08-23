@@ -20,12 +20,6 @@
         - /S
         - /REGISTRY
         state: present
-        
-    - name: ejecutar CCleaner
-      win_command: 
-        free_form: C:\Program Files\CCleaner\CCleaner.exe
-        args:
-          - /AUTO
     
     - name: Reiniciar equipo
       win_reboot:
