@@ -4,4 +4,4 @@
   tasks:
   
     - name: instalación de ScreenConnect.exe
-      win_shell: C:\AWX\instalacion_basica\ConnectWiseControl.ClientSetup.exe --quiet
+      win_shell: C:\AWX\instalacion_basica\ConnectWiseControl.ClientSetup.exe
