@@ -1,0 +1,54 @@
+- name:  Intalación de Programas Básicos
+  hosts: all
+  tasks:
+
+    - name: Crear directorio para alojar los ejecutables
+      win_file:
+        path: C:\AWX
+        state: directory
+    
+    - name: copiar archivos .exe de servidor a equipo
+      win_copy:
+        src: /var/lib/awx/instalacion/programas_windows/instalacion_basica
+        dest: C:\AWX
+        
+    - name: instalación de ScreenConnect.exe
+      win_shell: C:\AWX\ScreenConnect\ConnectWiseControl.ClientSetup.exe --quiet
+    
+    - name: instalar archivo CCleaner.exe
+      win_package:
+        path: C:\AWX\instalacion_basica\ccsetup542.exe
+        creates_path: C:\Program Files\ccsetup542.exe
+        arguments: 
+        - /S
+        - /REGISTRY
+        state: present
+        
+    - name: Install Firefox
+      win_chocolatey:
+        name: firefoxesr
+        state: present
+
+    - name: Install Chrome
+      win_chocolatey:
+        name: googlechrome
+        state: present
+
+    - name: Install Thunderbird
+      win_chocolatey:
+        name: thunderbird
+        state: present
+        
+    - name: Crear directorio para alojar el certificado
+      win_file:
+        path: C:\Certificados
+        state: directory
+
+    - name: copiar archivo .exe
+      win_copy:
+        src: C:\AWX\instalacion_basica\Netkia_Desarrollo.p12
+        dest: C:\Certificados\Netkia_Desarrollo.p12
+        remote_src: yes   
+
+    - name: Reiniciar equipo
+      win_reboot:
