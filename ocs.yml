@@ -1,0 +1,18 @@
+- name:  Intalación de Programas Básicos
+  hosts: all
+  tasks:
+  
+    - name: instalar archivo OCS-inventory.exe
+      win_package:
+        path: C:\AWX\instalacion_basica\OCS-NG-Windows-Agent-Setup.exe
+        creates_path: C:\Program Files\OCS-NG-Windows-Agent-Setup.exe
+        creates_version: 2.1.1.3
+        arguments: 
+        - /S
+        - /SERVER=http://ocs.netkia.es/ocsinventory
+        - /TAG=NET
+        - /norestart
+        state: present
+    
+    - name: Reiniciar equipo
+      win_reboot:
