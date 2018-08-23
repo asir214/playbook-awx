@@ -20,3 +20,6 @@
         arguments: 
           - /S
         state: present
+    
+    - name: Reiniciar equipo
+      win_reboot:
