@@ -12,6 +12,15 @@
         src: /var/lib/awx/instalacion/programas_windows/instalacion_basica
         dest: C:\AWX
         
+    - name: instalar archivo CCleaner.exe
+      win_package:
+        path: C:\AWX\instalacion_basica\ccsetup542.exe
+        creates_path: C:\Program Files (x86)\ccsetup542.exe
+        arguments: 
+        - /S
+        - /REGISTRY
+        state: present
+        
     - name: Instalar Sophos.exe
       win_package:
         path: C:\AWX\instalacion_basica\SophosSetup_Netkia.exe
