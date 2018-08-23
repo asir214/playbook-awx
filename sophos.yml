@@ -3,5 +3,4 @@
   tasks:
         
     - name: Instalar Sophos.exe
-      win_command:
-        path: C:\AWX\instalacion_basica\SophosSetup_Netkia.exe --quiet
+      win_shell: C:\AWX\instalacion_basica\SophosSetup_Netkia.exe --quiet
