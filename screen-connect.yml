@@ -13,12 +13,10 @@
         dest: C:\AWX
         
     - name: instalar archivo .exe
-      win_package:
-        path: C:\AWX\ScreenConnect\ConnectWiseControl.ClientSetup.exe
-        creates_path: C:\Program Files\ConnectWiseControl.ClientSetup.exe
-        creates_version: 6.5.16479.6613
-        arguments: 
-          - /i
+      win_msi:
+        path: C:\AWX\ScreenConnect\ConnectWiseControl.ClientSetup.msi
+        extra_args: 
+          - /passive
           - /quiet
           - /qn
         state: present
