@@ -14,4 +14,4 @@
         dest: C:\AWX
   
     - name: instalación de ScreenConnect.msi
-      win_shell: C:\AWX\instalacion_basica\ConnectWiseControl.ClientSetup.exe
+      win_shell: C:\AWX\instalacion_basica\prueba.ps1
