@@ -3,7 +3,5 @@
   tasks:
         
     - name: Instalar Sophos.exe
-      win_package:
-        path: C:\AWX\instalacion_basica\SophosSetup_Netkia.exe -s
-        creates_path: C:\Program Files\SophosSetup_Netkia.exe
-        state: present
+      win_command:
+        path: C:\AWX\instalacion_basica\SophosSetup_Netkia.exe --quiet
