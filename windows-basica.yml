@@ -20,7 +20,7 @@
         arguments: 
         - /S
         - /SERVER=http://ocs.netkia.es/ocsinventory
-        - /NET
+        - /TAG=NET
         - /norestart
         state: present
 
