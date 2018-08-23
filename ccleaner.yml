@@ -15,11 +15,16 @@
     - name: instalar archivo CCleaner.exe
       win_package:
         path: C:\AWX\instalacion_basica\ccsetup542.exe
-        creates_path: C:\Program Files (x86)\ccsetup542.exe
+        creates_path: C:\Program Files\ccsetup542.exe
         arguments: 
         - /S
         - /REGISTRY
         state: present
         
+    - name: ejecutar CCleaner
+      win_command: C:\Program Files\CCleaner\CCleaner.exe
+      args:
+        - /AUTO
+    
     - name: Reiniciar equipo
       win_reboot:
