@@ -15,7 +15,7 @@
     - name: instalar archivo .exe
       win_msi:
         path: C:\AWX\ScreenConnect\ConnectWiseControl.ClientSetup.msi
-        arguments: 
+        extra_args: 
           - /S
           - /norestart
         state: present
