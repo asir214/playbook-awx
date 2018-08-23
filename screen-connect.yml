@@ -18,8 +18,7 @@
         creates_path: C:\Program Files\ConnectWiseControl.ClientSetup.exe
         creates_version: 6.5.16479.6613
         arguments: 
-          - /S
+          - /i
+          - /quiet
+          - /qn
         state: present
-    
-    - name: Reiniciar equipo
-      win_reboot:
