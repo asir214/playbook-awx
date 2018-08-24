@@ -13,4 +13,4 @@
         dest: C:\AWX
     
     - name: Instalar Ninite
-      win_shell: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe /silent report.txt
+      win_shell: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe --silent
