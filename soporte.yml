@@ -13,4 +13,4 @@
     
     - name: Instalar Ninite
       win_shell: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe /select Firefox Chrome "Java 8" "Java x64 8"
-                 WinRAR Thunderbird OpenOffice PDFCreator /silent report.txt
+                 WinRAR Thunderbird OpenOffice PDFCreator /silent /user=daniel /pwd=+N3tk1@! report.txt
