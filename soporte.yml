@@ -1,0 +1,16 @@
+- name:  Intalación de Programas de Soporte
+  hosts: all
+  tasks:
+
+    - name: Crear directorio para alojar los ejecutables
+      win_file:
+        path: C:\AWX
+        state: directory
+    
+    - name: Copiar archivos .exe de servidor a equipo
+      win_copy:
+        src: /var/lib/awx/instalacion/programas_windows/soporte
+        dest: C:\AWX
+    
+    - name: Instalar Ninite
+      win_shell: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe --quiet
