@@ -13,4 +13,10 @@
         dest: C:\AWX
     
     - name: Instalar Ninite
-      win_shell: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe --silent
+      win_package:
+        path: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe
+        creates_path: C:\Program Files\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe
+        arguments:
+          - /silent
+          - /install
+          - /S
