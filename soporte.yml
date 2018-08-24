@@ -1,7 +1,7 @@
 - name:  Intalación de Programas de Soporte
   hosts: all
   tasks:
-     - name: Crear directorio para alojar los ejecutables
+    - name: Crear directorio para alojar los ejecutables
       win_file:
         path: C:\AWX
         state: directory
