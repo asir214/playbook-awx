@@ -14,4 +14,4 @@
         dest: C:\AWX
   
     - name: instalación de ScreenConnect.msi
-      win_command: powershell.exe -ExecutionPolicy ByPass -File C:/AWX/prueba.ps1
+      win_command: powershell.exe -ExecutionPolicy ByPass -File C:\AWX\instalacion_basica\prueba.ps1
