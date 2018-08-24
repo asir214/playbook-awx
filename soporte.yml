@@ -1,8 +1,7 @@
 - name:  Intalación de Programas de Soporte
   hosts: all
   tasks:
-
-    - name: Crear directorio para alojar los ejecutables
+     - name: Crear directorio para alojar los ejecutables
       win_file:
         path: C:\AWX
         state: directory
@@ -13,9 +12,5 @@
         dest: C:\AWX
     
     - name: Instalar Ninite
-      win_package:
-        path: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe
-        creates_path: C:\Program Files (x86)\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe
-        arguments:
-          - /S
-        state: present
+      win_shell: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe /select Firefox Chrome "Java 8" "Java x64 8"
+ WinRAR Thunderbird OpenOffice PDFCreator /silent report.txt
