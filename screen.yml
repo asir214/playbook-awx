@@ -15,5 +15,3 @@
   
     - name: instalación de ScreenConnect.msi
       win_shell: powershell -Command "Start-Process PowerShell -Verb RunAs" ByPass -File C:/AWX/prueba.ps1
-        args:
-        - /S
