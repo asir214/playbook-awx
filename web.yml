@@ -4,4 +4,4 @@
 
   - name: Instalación de WebPlus
     win_msi:
-    path: C:\AWX\soporte\webplussetup.msi
+      path: C:\AWX\soporte\webplussetup.msi
