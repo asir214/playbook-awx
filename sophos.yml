@@ -3,7 +3,4 @@
   tasks:
         
     - name: Instalar Sophos.exe
-      win_shell: C:\AWX\instalacion_basica\SophosSetup_Netkia.exe --quiet
-    
-    - name: Reiniciar equipo
-      win_reboot:
+      win_shell: C:\AWX\soporte\SophosSetup.exe
