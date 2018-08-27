@@ -11,6 +11,5 @@
         src: /var/lib/awx/instalacion/programas_windows/soporte
         dest: C:\AWX
     
-    - name: Instalar Ninite
-      win_shell: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe /select Firefox Chrome "Java 8" "Java x64 8"
-                 WinRAR Thunderbird OpenOffice PDFCreator /silent /user=daniel /pwd=+N3tk1@! report.txt
+    - name: Instalar Acrobat
+      win_shell: C:\AWX\soporte\AcroRdrDC1801120055_es_ES.exe
