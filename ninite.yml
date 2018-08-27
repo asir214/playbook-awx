@@ -7,5 +7,5 @@
         src: /var/lib/awx/instalacion/programas_windows/soporte
         dest: C:\AWX
         
-    - name: Instalar Ninite.exe
-      win_shell: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe
+    - name: Copiar accesos directos a escritorio
+      win_command: C:\AWX\soporte\Copiar.bat
