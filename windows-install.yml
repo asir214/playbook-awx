@@ -1,23 +1,19 @@
-- name:  Intalación de Programas Básicos
+- name:  Intalación de Programas de Soporte
   hosts: all
   tasks:
-
     - name: Crear directorio para alojar los ejecutables
       win_file:
         path: C:\AWX
         state: directory
-    
-    - name: copiar archivos .exe de servidor a equipo
+
+    - name: Copiar archivos .exe de servidor a equipo
       win_copy:
-        src: /var/lib/awx/instalacion/programas_windows/instalacion_basica
+        src: /var/lib/awx/instalacion/programas_windows/soporte
         dest: C:\AWX
-        
-    - name: instalación de ScreenConnect.exe
-      win_shell: C:\AWX\instalacion_basica\ConnectWiseControl.ClientSetup.exe --quiet
     
     - name: instalar archivo OCS-inventory.exe
       win_package:
-        path: C:\AWX\instalacion_basica\OCS-NG-Windows-Agent-Setup.exe
+        path: C:\AWX\soporte\OCS-NG-Windows-Agent-Setup.exe
         creates_path: C:\Program Files (x86)\OCS-NG-Windows-Agent-Setup.exe
         creates_version: 2.1.1.3
         arguments: 
@@ -26,38 +22,16 @@
         - /TAG=NET
         - /norestart
         state: present
-    
-    - name: instalar archivo CCleaner.exe
-      win_package:
-        path: C:\AWX\instalacion_basica\ccsetup542.exe
-        creates_path: C:\Program Files\ccsetup542.exe
-        arguments: 
-        - /S
-        - /REGISTRY
-        state: present
-        
-    - name: Install Firefox
-      win_chocolatey:
-        name: firefoxesr
-        state: present
 
-    - name: Install Chrome
-      win_chocolatey:
-        name: googlechrome
-        state: present
+    - name: Instalar Sophos.exe
+      win_shell: C:\AWX\soporte\SophosSetup.exe --quiet
+  
+    - name: Instalar Acrobat
+      win_shell: C:\AWX\soporte\AcroRdrDC1801120055_es_ES.exe
 
-    - name: Install Thunderbird
-      win_chocolatey:
-        name: thunderbird
-        state: present
-        
-    - name: Crear directorio para alojar el certificado
-      win_file:
-        path: C:\Certificados
-        state: directory
+    - name: Instalación de WebPlus
+      win_msi:
+        path: C:\AWX\soporte\webplussetup.msi
 
-    - name: copiar archivo .exe
-      win_copy:
-        src: C:\AWX\instalacion_basica\Netkia_Desarrollo.p12
-        dest: C:\Certificados\Netkia_Desarrollo.p12
-        remote_src: yes
+    - name: Instalar Ninite.exe
+      win_shell: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe
