@@ -8,4 +8,4 @@
         dest: C:\AWX
         
     - name: Instalar Ninite.exe
-      win_shell: C:\AWX\soporte\Ninite.ps1
+      win_shell: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe
