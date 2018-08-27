@@ -3,4 +3,4 @@
   tasks:
         
     - name: Instalar Ninite.exe
-      win_shell: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe /silent
+      win_shell: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe /silent . /select thunderbird firefox chrome 
