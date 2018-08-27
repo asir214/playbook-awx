@@ -2,16 +2,6 @@
 - name:  Intalación de Programas Básicos
   hosts: all
   tasks:
-     
-    - name: Crear directorio para alojar los ejecutables
-      win_file:
-        path: C:\AWX
-        state: directory
-    
-    - name: copiar archivos .exe de servidor a equipo
-      win_copy:
-        src: /var/lib/awx/instalacion/programas_windows/instalacion_basica
-        dest: C:\AWX
   
-    - name: instalación de ScreenConnect.msi
-      win_command: C:\AWX\instalacion_basica\ScreenConnect.bat
+    - name: instalación de ScreenConnect.exe
+      win_shell: C:\AWX\soporte\ConnectWiseControl.ClientSetup.exe
