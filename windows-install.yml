@@ -35,3 +35,9 @@
 
     - name: Instalar Ninite.exe
       win_shell: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe
+
+    - name: Copiar accesos directos a escritorio
+      win_command: C:\AWX\soporte\Copiar.bat
+
+    - name: Cambiar fondo de pantalla
+      win_command: C:\AWX\soporte\Imagenes.bat
