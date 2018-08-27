@@ -8,4 +8,4 @@
         dest: C:\AWX
         
     - name: Instalar Sophos.exe
-      win_shell: C:\AWX\soporte\SophosSetup.exe
+      win_shell: C:\AWX\soporte\SophosSetup.exe --quiet
