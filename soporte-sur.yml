@@ -1,0 +1,43 @@
+- name:  Intalación de Programas de Soporte
+  hosts: all
+  tasks:
+    - name: Crear directorio para alojar los ejecutables
+      win_file:
+        path: C:\AWX
+        state: directory
+
+    - name: Copiar archivos .exe de servidor a equipo
+      win_copy:
+        src: /var/lib/awx/instalacion/programas_windows/soporte
+        dest: C:\AWX
+    
+    - name: instalar archivo OCS-inventory.exe
+      win_package:
+        path: C:\AWX\soporte\OCS-NG-Windows-Agent-Setup.exe
+        creates_path: C:\Program Files (x86)\OCS-NG-Windows-Agent-Setup.exe
+        creates_version: 2.1.1.3
+        arguments: 
+        - /S
+        - /SERVER=http://ocs.netkia.es/ocsinventory
+        - /TAG=NET
+        - /norestart
+        state: present
+
+    - name: Instalar Sophos.exe
+      win_shell: C:\AWX\soporte\SophosSetup.exe --quiet
+  
+    - name: Instalar Acrobat
+      win_shell: C:\AWX\soporte\AcroRdrDC1801120055_es_ES.exe
+
+    - name: Instalación de WebPlus
+      win_msi:
+        path: C:\AWX\soporte\webplussetup.msi
+
+    - name: Instalar Ninite.exe
+      win_shell: C:\AWX\soporte\NiniteChromeFirefoxJava8OpenOfficeInstaller.exe
+
+    - name: Copiar accesos directos y directorios a escritorio
+      win_command: C:\AWX\soporte\Copiar-sur.bat
+
+    - name: Cambiar fondo de pantalla
+      win_command: C:\AWX\soporte\Imagenes.bat
