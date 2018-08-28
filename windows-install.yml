@@ -22,9 +22,6 @@
         - /TAG=NET
         - /norestart
         state: present
-
-    - name: Instalar Sophos.exe
-      win_shell: C:\AWX\soporte\SophosSetup.exe --quiet
   
     - name: Instalar Acrobat
       win_shell: C:\AWX\soporte\AcroRdrDC1801120055_es_ES.exe
