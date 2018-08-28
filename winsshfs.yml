@@ -5,3 +5,19 @@
       win_copy:
         src: /var/lib/awx/instalacion/programas_windows/WinSshFs
         dest: C:\AWX
+        
+    - name: Instalar DokanSetup.exe
+      win_shell: C:\AWX\WinSshFs\DokanSetup.exe
+      
+    - name: Instalar DokanSetup_redist.exe
+      win_shell: C:\AWX\WinSshFs\DokanSetup_redist.exe
+      
+    - name: Instalar Dokan_x64.msi
+      win_msi: 
+        path: C:\AWX\WinSshFs\Dokan_x64.msi
+       
+    - name: Instalar vcredist_x64.exe
+      win_shell: C:\AWX\WinSshFs\vcredist_x64.exe
+      
+    - name: Instalar WinSshFS.exe
+      win_shell: C:\AWX\WinSshFs\WinSshFS.exe
