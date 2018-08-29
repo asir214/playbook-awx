@@ -6,8 +6,6 @@
       win_copy:
         src: /var/lib/awx/instalacion/programas_windows/soporte
         dest: C:\AWX
-        
-    - name: Eliminar Directorios
-      win_command: C:\AWX\soporte\Eliminar.bat
-    
-    - win_reboot:
+  
+    - name: instalación de ScreenConnect.exe
+      win_command: C:\AWX\soporte\ScreenConnect.bat
