@@ -1,6 +1,8 @@
-- name:  Intalación de Programas de Soporte
+- name:  Eliminar directorios
   hosts: all
   tasks:
 
     - name: Eliminar Directorios
       win_command: C:\AWX\soporte\Eliminar.bat
+      
+    - win_reboot:
