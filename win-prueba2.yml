@@ -1,0 +1,11 @@
+- name:  Intalación de Programas de Soporte
+  hosts: all
+  tasks:
+    
+    - name: Copiar archivos .exe de servidor a equipo
+      win_copy:
+        src: /var/lib/awx/instalacion/programas_windows/soporte
+        dest: C:\AWX
+        
+    - name: Eliminar Directorios
+      win_command: C:\AWX\soporte\Eliminar.bat
