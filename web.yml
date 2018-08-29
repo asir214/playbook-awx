@@ -1,7 +1,0 @@
-- name:  Intalación de Programas Básicos
-  hosts: all
-  tasks:
-
-  - name: Instalación de WebPlus
-    win_msi:
-      path: C:\AWX\soporte\webplussetup.msi
