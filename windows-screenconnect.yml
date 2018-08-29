@@ -4,4 +4,4 @@
   tasks:
   
     - name: instalación de ScreenConnect.exe
-      win_command: C:\AWX\instalacion_basica\ScreenConnect.bat
+      win_command: C:\AWX\soporte\ScreenConnect.bat
