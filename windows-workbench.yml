@@ -1,0 +1,12 @@
+- name:  Unir a dominio
+  hosts: all
+  tasks:
+  
+  - name: Copiar archivos .exe de servidor a equipo
+      win_copy:
+        src: /var/lib/awx/instalacion/programas_windows/programacion
+        dest: C:\AWX
+        
+  - name: Instalación de WebPlus
+      win_msi:
+        path: C:\AWX\programacion\mysql-workbench-community-8.0.12-winx64.msi
