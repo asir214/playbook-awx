@@ -1,5 +1,5 @@
 - name:  Intalación de Programas de Programación
-hosts: all
+  hosts: all
   tasks:
     - name: Crear directorio para alojar los ejecutables
       win_file:
