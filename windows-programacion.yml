@@ -1,0 +1,36 @@
+- name:  Intalación de Programas de Programación
+hosts: all
+  tasks:
+    - name: Crear directorio para alojar los ejecutables
+      win_file:
+        path: C:\AWX
+        state: directory
+
+    - name: Copiar archivos .exe de servidor a equipo
+      win_copy:
+        src: /var/lib/awx/instalacion/programas_windows/programacion
+        dest: C:\AWX
+     
+    - name: Instalación de WebPlus
+      win_msi:
+        path: C:\AWX\programacion\mysql-workbench-community-8.0.12-winx64.msi
+       
+    - Name: Instalación de Visual Studio Community 2017
+      win_chocolatey:
+        name: visualstudio2017community
+        state: present
+        
+    - Name: Instalación de Android Studio
+      win_chocolatey:
+        name: androidstudio
+        state: present
+        
+    - Name: Instalación de Sublime Text 3
+      win_chocolatey:
+        name: sublimetext3
+        state: present
+        
+    - Name: Instalación de Rocket Chat
+      win_chocolatey:
+        name: rocketchat
+        state: present
