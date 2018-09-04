@@ -8,5 +8,4 @@
       dest: C:\AWX
         
   - name: Instalación de WebPlus
-    win_msi:
-      path: C:\AWX\programacion\mysql-workbench-community-8.0.12-winx64.msi
+    win_shell: C:\AWX\programacion\mysql-workbench-community-8.0.12-winx64.msi
