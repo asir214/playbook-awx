@@ -1,0 +1,15 @@
+- name:  SOPORTE
+  hosts: all
+  tasks:
+    - name: Crear directorio para alojar los ejecutables
+      win_file:
+        path: C:\AWX
+        state: directory
+
+    - name: Copiar archivos .exe de servidor a equipo
+      win_copy:
+        src: /var/lib/awx/instalacion/programas_windows/soporte
+        dest: C:\AWX
+    
+    - name: DLL's
+      win_command: C:\AWX\soporte\DLL.bat
