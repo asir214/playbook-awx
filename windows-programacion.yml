@@ -39,3 +39,13 @@
       win_chocolatey:
         name: thunderbird
         state: present
+    
+    - Name: Instalación de Google-Chrome
+      win_chocolatey:
+        name: googlechrome
+        state: present
+        
+    - Name: Instalación de Firefox
+      win_chocolatey:
+        name: firefox
+        state: present
