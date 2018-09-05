@@ -11,8 +11,13 @@
         src: /var/lib/awx/instalacion/programas_windows/WinSshFs
         dest: C:\AWX
         
-    - name: Instalar DokanSetup.exe
-      win_shell: C:\AWX\WinSshFs\DokanSetup.exe
+    - name: instalar archivo .exe
+      win_package:
+        path: C:\AWX\WinSshFs\DokanSetup.exe
+        creates_path: C:\Program Files (x86)\DokanSetup.exe
+        arguments:
+        - /S
+        state: present
       
     - name: Instalación de WinSshFs
       win_msi:
