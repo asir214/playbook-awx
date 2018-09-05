@@ -14,4 +14,4 @@
     - name: Descomprimir 
       win_unzip:
         src: C:\AWX\soporte\PredeployActiveX_siebel_8.1.1.zip
-        dest: C:\Windows\Downloaded Program Files\
+        dest: C:\Users\Admin\Desktop\prueba
