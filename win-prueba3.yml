@@ -15,6 +15,3 @@
       win_unzip:
         src: C:\AWX\soporte\PredeployActiveX_siebel_8.1.1.zip
         dest: C:\Windows\Downloaded Program Files
-        
-    - name: Validar dll's
-      win_command: C:\AWX\soporte\DLL.bat
