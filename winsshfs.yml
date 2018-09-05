@@ -1,0 +1,19 @@
+- name:  Intalación de WinSshFs
+  hosts: all
+  tasks:
+    - name: Crear directorio para alojar los ejecutables
+      win_file:
+        path: C:\AWX
+        state: directory
+
+    - name: Copiar archivos .exe de servidor a equipo
+      win_copy:
+        src: /var/lib/awx/instalacion/programas_windows/WinSshFs
+        dest: C:\AWX
+        
+    - name: Instalar DokanSetup.exe
+      win_shell: C:\AWX\WinSshFs\DokanSetup.exe
+      
+    - name: Instalación de WinSshFs
+      win_msi:
+        path: C:\AWX\WinSshFs\WinSSHFS-1.6.1.13-devel.msi
