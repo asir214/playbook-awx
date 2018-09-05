@@ -1,4 +1,4 @@
-- name:  Intalación de Programas de Programación
+- name:  Intalación de aplicaciones de Programación
   hosts: all
   tasks:
     - name: Crear directorio para alojar los ejecutables
@@ -11,7 +11,7 @@
         src: /var/lib/awx/instalacion/programas_windows/programacion
         dest: C:\AWX
      
-    - name: Instalación de WebPlus
+    - name: Instalación de Workbench
       win_msi:
         path: C:\AWX\programacion\mysql-workbench-community-8.0.12-winx64.msi
        
@@ -33,4 +33,9 @@
     - Name: Instalación de Rocket Chat
       win_chocolatey:
         name: rocketchat
+        state: present
+        
+    - Name: Instalación de Thunderbird
+      win_chocolatey:
+        name: thunderbird
         state: present
