@@ -1,0 +1,17 @@
+- name:  SOPORTE
+  hosts: all
+  tasks:
+    - name: Crear directorio para alojar los ejecutables
+      win_file:
+        path: C:\AWX
+        state: directory
+
+    - name: Copiar archivos .exe de servidor a equipo
+      win_copy:
+        src: /var/lib/awx/instalacion/programas_windows/soporte
+        dest: C:\AWX
+    
+    - name: Descomprimir 
+      win_unzip:
+        src: C:\AWX\soporte\PredeployActiveX_siebel_8.1.1.zip
+        dest: C:\Windows\Downloaded Program Files\
