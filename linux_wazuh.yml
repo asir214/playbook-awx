@@ -1,0 +1,28 @@
+---
+- hosts: all
+  tasks:
+  
+  - name: Instalamos apt-transport-https y lsb-release
+    apt:
+      name: "{{ item }}"
+      state: present
+      cache_valid_time: 3600
+    with_items:
+      - apt-transport-https
+      - lsb-release
+
+  - name: Instalamos la GPC key
+    apt_key: url=https://packages.wazuh.com/key/GPG-KEY-WAZUH 
+    
+  - name: Añadimos el repositorio de Wazuh
+    apt_repository:
+      repo: 'deb https://packages.wazuh.com/3.x/apt/ stable main'
+      state: present
+      update_cache: yes
+      
+  - name: Actualizamos el sistema
+    apt:
+      update_cache: yes
+      
+  - name: Instalamos wazuh-agent
+    apt: pkg=wazuh-agent state=latest
