@@ -1,0 +1,8 @@
+- name:  Intalación de Programas de Soporte
+  hosts: all
+  tasks:
+    
+    - Name: Instalación de Git 2.7.4
+      win_chocolatey:
+        name: git --version 2.7.4
+        state: present
