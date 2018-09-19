@@ -12,7 +12,9 @@
       - lsb-release
 
   - name: Instalamos la GPC key
-    apt_key: url=https://packages.wazuh.com/key/GPG-KEY-WAZUH 
+    apt_key: 
+      url: https://packages.wazuh.com/key/GPG-KEY-WAZUH 
+      state: present
     
   - name: Añadimos el repositorio de Wazuh
     apt_repository:
