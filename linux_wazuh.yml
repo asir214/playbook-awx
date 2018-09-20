@@ -27,4 +27,6 @@
       update_cache: yes
       
   - name: Instalamos wazuh-agent
-    apt: pkg=wazuh-agent state=latest
+    apt: 
+      pkg: wazuh-agent 
+      state: latest
